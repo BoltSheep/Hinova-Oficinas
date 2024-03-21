@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.indicacao.IndicacaoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp">
+
+        <TextView
+            android:id="@+id/tvIndicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/informa_amigo"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </TextView>
+
+        <EditText
+            android:id="@+id/etNomeAmigo"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="@string/nome"
+            android:inputType="textPersonName"
+            android:textSize="32sp"
+            android:layout_marginTop="42dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvIndicacao"
+            android:autofillHints="name" />
+
+        <EditText
+            android:id="@+id/etEmailAmigo"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:textSize="32sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNomeAmigo"
+            android:autofillHints="emailAddress" />
+
+        <EditText
+            android:id="@+id/etTelefoneAmigo"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="@string/telefone"
+            android:inputType="phone"
+            android:textSize="32sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etEmailAmigo"
+            android:autofillHints="phone" />
+
+        <Button
+            android:id="@+id/btEnviarIndicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/enviar"
+            android:textSize="32sp"
+            app:layout_constraintTop_toBottomOf="@id/etTelefoneAmigo"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
