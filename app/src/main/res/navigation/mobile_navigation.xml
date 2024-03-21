@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/escolhaFragment"
         android:name="com.example.hinovaoficinas.ui.escolha.EscolhaFragment"
-        android:label="fragment_escolha"
+        android:label="Escolha"
         tools:layout="@layout/fragment_escolha" >
         <action
             android:id="@+id/action_escolhaFragment_to_indicacaoFragment"
@@ -41,11 +41,11 @@
     <fragment
         android:id="@+id/indicacaoFragment"
         android:name="com.example.hinovaoficinas.ui.indicacao.IndicacaoFragment"
-        android:label="fragment_indicacao"
+        android:label="Indicação"
         tools:layout="@layout/fragment_indicacao" />
     <fragment
         android:id="@+id/oficinasFragment"
         android:name="com.example.hinovaoficinas.ui.oficinas.OficinasFragment"
-        android:label="fragment_oficinas"
+        android:label="Oficinas"
         tools:layout="@layout/fragment_oficinas" />
 </navigation>
