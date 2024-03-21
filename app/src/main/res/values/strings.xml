@@ -22,4 +22,10 @@
     <string name="nome">Nome</string>
     <string name="telefone">Telefone</string>
     <string name="enviar">Enviar</string>
+    <string name="listaOficinas">Oficinas:</string>
+    <string name="examplo_oficina">Oficina Gecar</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae cursus ex, sed molestie diam. Vestibulum dictum est vitae odio tincidunt auctor. Ut risus lorem, pellentesque sed tellus non, mattis aliquam ex. Curabitur porta et lectus non lacinia. Aliquam efficitur vulputate nibh, non gravida justo.</string>
+    <string name="exemplo_endereco">Rua Ignês Maria, 326 - Betim Industrial</string>
+    <string name="exemplo_email">contato@hinovamobile.com.br</string>
+    <string name="exemplo_telefone">31–34193100</string>
 </resources>

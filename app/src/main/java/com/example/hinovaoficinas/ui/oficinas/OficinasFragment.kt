@@ -13,6 +13,8 @@ class OficinasFragment : Fragment() {
 
     private var _binding: FragmentOficinasBinding? = null
     private val binding get() = _binding!!
+//    private var oficinasAdapter: OficinasAdapter? = null
+//    private val oficinaItemViewModel by sharedViewModel<OficinaItemViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,7 +22,8 @@ class OficinasFragment : Fragment() {
     ): View {
         _binding = FragmentOficinasBinding.inflate(inflater, container, false)
 
-
+//        oficinasAdapter = OficinasAdapter(oficinaItemViewModel.ListarOficinas)
+//        binding.rvItensOfinas.adapter = oficinasAdapter
 
         return binding.root
     }
