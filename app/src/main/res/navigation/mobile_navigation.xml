@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.hinovaoficinas.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_escolhaFragment"
+            app:destination="@id/escolhaFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +26,26 @@
         android:name="com.example.hinovaoficinas.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/escolhaFragment"
+        android:name="com.example.hinovaoficinas.ui.escolha.EscolhaFragment"
+        android:label="fragment_escolha"
+        tools:layout="@layout/fragment_escolha" >
+        <action
+            android:id="@+id/action_escolhaFragment_to_indicacaoFragment"
+            app:destination="@id/indicacaoFragment" />
+        <action
+            android:id="@+id/action_escolhaFragment_to_oficinasFragment"
+            app:destination="@id/oficinasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/indicacaoFragment"
+        android:name="com.example.hinovaoficinas.ui.indicacao.IndicacaoFragment"
+        android:label="fragment_indicacao"
+        tools:layout="@layout/fragment_indicacao" />
+    <fragment
+        android:id="@+id/oficinasFragment"
+        android:name="com.example.hinovaoficinas.ui.oficinas.OficinasFragment"
+        android:label="fragment_oficinas"
+        tools:layout="@layout/fragment_oficinas" />
 </navigation>
