@@ -29,7 +29,6 @@ class HomeFragment : Fragment() {
         val mainViewModel =
             ViewModelProvider(this).get(MainViewModel::class.java)
 
-        var logarValido = false
         var cpfDigitado = ""
         var senhaDigitada = ""
 
