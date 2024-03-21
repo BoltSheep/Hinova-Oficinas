@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.hinovaoficinas.R
 import com.example.hinovaoficinas.databinding.FragmentEscolhaBinding
 
 class EscolhaFragment : Fragment() {
@@ -20,11 +22,11 @@ class EscolhaFragment : Fragment() {
 
         with(binding){
             btIndique.setOnClickListener {
-                TODO()
+                findNavController().navigate(R.id.action_escolhaFragment_to_indicacaoFragment)
             }
 
             btOficinas.setOnClickListener {
-                TODO()
+                findNavController().navigate(R.id.action_escolhaFragment_to_oficinasFragment)
             }
         }
         return binding.root

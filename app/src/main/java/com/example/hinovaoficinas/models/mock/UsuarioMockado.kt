@@ -1,6 +1,5 @@
 package com.example.hinovaoficinas.models.mock
 
-import android.provider.ContactsContract.CommonDataKinds.Email
 import com.example.hinovaoficinas.models.UsuarioModel
 
 object UsuarioMockado {

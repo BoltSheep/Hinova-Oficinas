@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.hinovaoficinas.R
 import com.example.hinovaoficinas.databinding.FragmentHomeBinding
+import com.example.hinovaoficinas.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
 
@@ -20,8 +24,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val mainViewModel =
+            ViewModelProvider(this).get(MainViewModel::class.java)
 
         var logarValido = false
         var cpfDigitado = ""
@@ -29,7 +33,7 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        with(binding){
+        with(binding) {
 
             etCpf.doOnTextChanged { text, _, _, _ ->
                 cpfDigitado = text.toString()
@@ -42,11 +46,24 @@ class HomeFragment : Fragment() {
             }
 
             btLogar.setOnClickListener {
-                TODO()
+                if (mainViewModel.checarDadosLogin(
+                        etCpf.text.toString(),
+                        etSenha.text.toString()
+                    )
+                ) {
+                    findNavController().navigate(R.id.action_navigation_home_to_escolhaFragment)
+                } else {
+                    val text = "O Login Falhou"
+                    val duration = Toast.LENGTH_LONG
+
+                    val toast = Toast.makeText(context, text, duration) // in Activity
+                    toast.show()
+                }
+
             }
 
             btIgnorarVerificacao.setOnClickListener {
-                TODO()
+                findNavController().navigate(R.id.action_navigation_home_to_escolhaFragment)
             }
         }
 
