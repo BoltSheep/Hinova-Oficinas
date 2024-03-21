@@ -1,6 +1,7 @@
 package com.example.hinovaoficinas.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.hinovaoficinas.R
 import com.example.hinovaoficinas.databinding.FragmentHomeBinding
+import com.example.hinovaoficinas.models.mock.UsuarioMockado
 import com.example.hinovaoficinas.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
@@ -37,18 +39,18 @@ class HomeFragment : Fragment() {
 
             etCpf.doOnTextChanged { text, _, _, _ ->
                 cpfDigitado = text.toString()
-                logarValido = cpfDigitado == "Mock" && senhaDigitada == "Mock"
+                btLogar.isEnabled = (!text.isNullOrEmpty() && !etSenha.text.isNullOrEmpty())
             }
 
             etSenha.doOnTextChanged { text, _, _, _ ->
                 senhaDigitada = text.toString()
-                logarValido = cpfDigitado == "Mock" && senhaDigitada == "Mock"
+                btLogar.isEnabled = (!text.isNullOrEmpty() && !etSenha.text.isNullOrEmpty())
             }
 
             btLogar.setOnClickListener {
                 if (mainViewModel.checarDadosLogin(
-                        etCpf.text.toString(),
-                        etSenha.text.toString()
+                        cpfDigitado,
+                        senhaDigitada
                     )
                 ) {
                     findNavController().navigate(R.id.action_navigation_home_to_escolhaFragment)

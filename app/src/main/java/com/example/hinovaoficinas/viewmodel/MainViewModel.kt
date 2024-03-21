@@ -23,7 +23,7 @@ class MainViewModel: ViewModel() {
 
 
     fun checarDadosLogin( cpf: String, senha:String): Boolean {
-        return cpf == UsuarioMockado.usuarioMockado.Cpf && senha == UsuarioMockado.Senha
+        return (cpf == UsuarioMockado.usuarioMockado.Cpf && senha == UsuarioMockado.Senha)
     }
 
     fun enviarDados( nome: String, email: String, telefone: String) {
